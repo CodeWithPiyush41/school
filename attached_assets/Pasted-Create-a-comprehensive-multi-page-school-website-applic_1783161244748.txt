@@ -1,0 +1,45 @@
+Create a comprehensive, multi-page school website application using React, Tailwind CSS, lucide-react icons, and shadcn/ui components. Setup React Router for seamless navigation across all pages. Ensure the design is highly professional, clean, fully responsive, and supports an optional Dark/Light mode theme toggle using next-themes.
+
+Implement the following global structure:
+1. Sticky Navbar: Brand logo, school name, links to all pages, a Light/Dark toggle, and a distinct "Apply Now" CTA button. Include a responsive sheet/drawer component for a slide-out mobile menu.
+2. Fixed Floating Widgets: A fixed WhatsApp floating button and a "Back to Top" button at the bottom corners.
+3. Footer: Dedicated sections for an About blurb, quick links, contact details, office timings, and social media icons.
+
+Create the following fully styled pages and components using realistic educational placeholder text and curated Unsplash imagery:
+
+### 1. Home Page
+- Full-screen Hero section with an overlaying, attention-grabbing "Admission Open" banner and a clear primary CTA.
+- Principal's Message section featuring an image placeholder and a welcoming blockquote layout.
+- "Why Choose Us" grid highlighting core strengths.
+- School Statistics: A prominent 4-column grid displaying: 1500+ Students, 80+ Teachers, 25+ Years, 100% Results.
+- Facilities: Card layouts displaying Smart Classrooms, Computer Lab, Science Lab, Library, and Sports.
+- Testimonials: A smooth sliding carousel showing parent/student reviews.
+- Latest Announcements: A scroll-area component acting as a news ticker.
+- Embedded map placeholder container at the bottom.
+
+### 2. About Page
+- Separate dedicated sections for School History, Vision, Mission, and Core Values.
+- Leadership layouts for individual "Principal's Message" and "Chairman's Message".
+- Infrastructure overview grid and a professional Faculty/Staff roster summary layout.
+
+### 3. Academics Page
+- Detailed layouts describing Classes Offered (Primary, Middle, Secondary) and Curriculum guidelines.
+- Dedicated showcase sections for campus learning hubs: Smart Classrooms, Computer Lab, Science Lab, and the Library.
+- Information sections for extra-curricular Sports and Campus Activities.
+
+### 4. Admission Page
+- A clear, visual step-by-step timeline or grid representing the Admission Process.
+- A neat check-list container for Required Documents.
+- A functional download section with a stylized button to "Download Admission Form (PDF)".
+- An interactive CTA block containing "Fee Enquiry", "Call Now", and "WhatsApp" buttons.
+
+### 5. Gallery Page
+- A responsive, multi-tab masonry layout or grid showcasing Photo Galleries categorized by events: Classroom Photos, Sports Photos, Annual Function, Independence Day, and Republic Day. Ensure images support a modal pop-up overlay when clicked.
+
+### 6. Events Page
+- A structured dashboard featuring Latest News cards, Upcoming Events calendar layouts, a downloadable Holiday List table, and an Exam Schedule template.
+
+### 7. Contact Page
+- A 2-column layout. Column 1: A functional, state-managed Contact Form ready to wire up with Formspree/Web3Forms (Name, Email, Phone, Message fields). Column 2: Plain text layout displaying Phone, Email, Address, Office Timings, and an embedded Google Maps iframe placeholder.
+
+Please use clean code organization with reusable components, modern typography, elegant layout spacing, and smooth animation transitions where appropriate.
