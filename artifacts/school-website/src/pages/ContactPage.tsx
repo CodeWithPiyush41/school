@@ -39,25 +39,39 @@ export default function ContactPage() {
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
         body: JSON.stringify({
           access_key: "333bb23e-b580-4d00-821e-9f7974d0aa9c",
+          botcheck: false,
           name: fields.name,
           email: fields.email,
           phone: fields.phone,
           subject: `[Greenfield Academy] ${fields.subject} – ${fields.name}`,
-          message: fields.message,
+          message: `Phone: ${fields.phone}\nSubject: ${fields.subject}\n\n${fields.message}`,
         }),
       });
       const data = await res.json();
       if (data.success) {
-        toast({ title: "Message Sent Successfully!", description: "We will get back to you within 24–48 working hours." });
+        toast({ title: "Message Sent Successfully! ✓", description: "We will get back to you within 24–48 working hours." });
         setFields(EMPTY);
       } else {
-        throw new Error(data.message || "Submission failed");
+        console.error("Web3Forms error:", data);
+        toast({
+          title: "Submission failed",
+          description: data.message || "Please try again or email us directly.",
+          variant: "destructive",
+        });
       }
-    } catch {
-      toast({ title: "Failed to send message", description: "Please try again or contact us directly by phone.", variant: "destructive" });
+    } catch (err) {
+      console.error("Contact form error:", err);
+      toast({
+        title: "Network error",
+        description: "Could not reach the server. Please check your connection or email us directly.",
+        variant: "destructive",
+      });
     } finally {
       setIsSubmitting(false);
     }
