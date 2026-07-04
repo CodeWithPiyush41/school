@@ -1,7 +1,6 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
 import { 
   Award, 
@@ -40,13 +39,6 @@ const TESTIMONIALS = [
   { name: "Priya Singh", relation: "Alumni", rating: 5, quote: "The foundation I got at Greenfield helped me excel in college and my career.", avatar: "https://ui-avatars.com/api/?name=Priya+Singh&background=random" },
 ];
 
-const NEWS = [
-  { date: "Dec 15", title: "Annual Sports Day" },
-  { date: "Dec 20", title: "Winter Concert" },
-  { date: "Jan 5", title: "Parent-Teacher Meeting" },
-  { date: "Jan 10", title: "Exam Schedule Released" },
-  { date: "Ongoing", title: "Admission Open for 2025-26" },
-];
 
 export default function HomePage() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -173,53 +165,25 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Latest Announcements & Facilities Split */}
+      {/* Facilities */}
       <section className="py-20 bg-background">
         <div className="container px-4 md:px-6">
-          <div className="grid lg:grid-cols-[1fr_350px] gap-12">
-            
-            {/* Facilities Grid */}
-            <div className="space-y-8">
-              <div className="flex items-center justify-between">
-                <h2 className="text-3xl font-serif font-bold text-primary dark:text-white">Our Facilities</h2>
-                <Link href="/about" className="text-primary hover:underline font-medium dark:text-accent">View All</Link>
-              </div>
-              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-                {FACILITIES.map((fac, idx) => (
-                  <div key={idx} className="group relative rounded-xl overflow-hidden aspect-[4/3]">
-                    <img src={fac.img} alt={fac.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
-                      <h4 className="font-bold text-lg">{fac.title}</h4>
-                      <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300">{fac.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          <div className="space-y-8">
+            <div className="flex items-center justify-between">
+              <h2 className="text-3xl font-serif font-bold text-primary dark:text-white">Our Facilities</h2>
+              <Link href="/about" className="text-primary hover:underline font-medium dark:text-accent">View All</Link>
             </div>
-
-            {/* Announcements Sidebar */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-serif font-bold text-primary dark:text-white">Announcements</h2>
-              <Card className="h-[400px] flex flex-col border-primary/20 bg-secondary/10 shadow-inner">
-                <ScrollArea className="flex-1 p-6">
-                  <div className="space-y-6 pr-4">
-                    {NEWS.map((item, idx) => (
-                      <div key={idx} className="relative pl-4 border-l-2 border-accent">
-                        <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-background border-2 border-accent" />
-                        <span className="text-xs font-bold text-primary dark:text-accent uppercase tracking-wider">{item.date}</span>
-                        <h4 className="font-medium text-foreground mt-1">{item.title}</h4>
-                      </div>
-                    ))}
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+              {FACILITIES.map((fac, idx) => (
+                <div key={idx} className="group relative rounded-xl overflow-hidden aspect-[4/3]">
+                  <img src={fac.img} alt={fac.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-4 text-white">
+                    <h4 className="font-bold text-lg">{fac.title}</h4>
+                    <p className="text-sm text-white/80 opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300">{fac.desc}</p>
                   </div>
-                </ScrollArea>
-                <div className="p-4 border-t bg-card mt-auto rounded-b-xl">
-                  <Link href="/events">
-                    <Button variant="outline" className="w-full">View All Events</Button>
-                  </Link>
                 </div>
-              </Card>
+              ))}
             </div>
-
           </div>
         </div>
       </section>
