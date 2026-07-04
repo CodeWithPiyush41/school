@@ -30,6 +30,15 @@ export default function ContactPage() {
     return e;
   };
 
+  /** Fallback: open the user's mail client with all fields pre-filled */
+  const openMailto = () => {
+    const body = encodeURIComponent(
+      `Name: ${fields.name}\nEmail: ${fields.email}\nPhone: ${fields.phone}\nSubject: ${fields.subject}\n\n${fields.message}`
+    );
+    const subject = encodeURIComponent(`[Greenfield Academy] ${fields.subject} – ${fields.name}`);
+    window.location.href = `mailto:workwithpp46@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const errs = validate();
@@ -55,10 +64,23 @@ export default function ContactPage() {
       });
       const data = await res.json();
       if (data.success) {
-        toast({ title: "Message Sent Successfully! ✓", description: "We will get back to you within 24–48 working hours." });
+        toast({
+          title: "Message Sent Successfully! ✓",
+          description: "We will get back to you within 24–48 working hours.",
+        });
+        setFields(EMPTY);
+      } else if (
+        typeof data.message === "string" &&
+        data.message.toLowerCase().includes("domain")
+      ) {
+        // Web3Forms blocks dev/preview domains — fall back to mailto
+        openMailto();
+        toast({
+          title: "Opening your email client…",
+          description: "Your default mail app will open with the message pre-filled. Just hit Send.",
+        });
         setFields(EMPTY);
       } else {
-        console.error("Web3Forms error:", data);
         toast({
           title: "Submission failed",
           description: data.message || "Please try again or email us directly.",
@@ -67,11 +89,13 @@ export default function ContactPage() {
       }
     } catch (err) {
       console.error("Contact form error:", err);
+      // Network / parse error — also fall back to mailto
+      openMailto();
       toast({
-        title: "Network error",
-        description: "Could not reach the server. Please check your connection or email us directly.",
-        variant: "destructive",
+        title: "Opening your email client…",
+        description: "Your default mail app will open with the message pre-filled. Just hit Send.",
       });
+      setFields(EMPTY);
     } finally {
       setIsSubmitting(false);
     }
