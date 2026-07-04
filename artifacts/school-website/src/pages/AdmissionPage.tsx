@@ -94,7 +94,7 @@ export default function AdmissionPage() {
             </Card>
 
             <div className="grid sm:grid-cols-3 gap-4">
-              <a href="mailto:admissions@greenfieldacademy.edu" className="block">
+              <a href="mailto:workwithpp46@gmail.com" className="block">
                 <Button variant="outline" className="w-full h-auto py-4 flex flex-col gap-2">
                   <Mail className="h-5 w-5 text-primary" />
                   <span>Fee Enquiry</span>
