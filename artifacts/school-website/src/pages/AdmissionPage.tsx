@@ -87,9 +87,11 @@ export default function AdmissionPage() {
                 <p className="text-primary-foreground/80">
                   Download the official admission form, fill it completely, and submit it to the office along with the required documents.
                 </p>
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold w-full sm:w-auto h-14 px-8">
-                  <Download className="mr-2 h-5 w-5" /> Download PDF Form
-                </Button>
+                <a href="/admission-form.pdf" download="Greenfield_Academy_Admission_Form.pdf" className="w-full sm:w-auto">
+                  <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold w-full h-14 px-8">
+                    <Download className="mr-2 h-5 w-5" /> Download PDF Form
+                  </Button>
+                </a>
               </CardContent>
             </Card>
 
