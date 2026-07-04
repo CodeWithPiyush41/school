@@ -55,14 +55,14 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
-                <a href="tel:+911112345678" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  +91-11-1234-5678
+                <a href="tel:+917742484927" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  +91-77424-84927
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent shrink-0" />
-                <a href="mailto:info@greenfieldacademy.edu" className="text-primary-foreground/80 hover:text-accent transition-colors">
-                  info@greenfieldacademy.edu
+                <a href="mailto:workwithpp46@gmail.com" className="text-primary-foreground/80 hover:text-accent transition-colors">
+                  workwithpp46@gmail.com
                 </a>
               </li>
             </ul>

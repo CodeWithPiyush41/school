@@ -193,8 +193,8 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-bold text-foreground text-lg mb-1">Phone Numbers</h4>
                   <div className="text-muted-foreground text-sm space-y-1">
-                    <p>Reception: <a href="tel:+911112345678" className="hover:text-primary">+91-11-1234-5678</a></p>
-                    <p>Admissions: <a href="tel:+911112345679" className="hover:text-primary">+91-11-1234-5679</a></p>
+                    <p>Reception: <a href="tel:+917742484927" className="hover:text-primary">+91-77424-84927</a></p>
+                    <p>Admissions: <a href="tel:+917742484927" className="hover:text-primary">+91-77424-84927</a></p>
                   </div>
                 </div>
               </div>
@@ -206,8 +206,7 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-bold text-foreground text-lg mb-1">Email Addresses</h4>
                   <div className="text-muted-foreground text-sm space-y-1">
-                    <p><a href="mailto:info@greenfieldacademy.edu" className="hover:text-primary">info@greenfieldacademy.edu</a></p>
-                    <p><a href="mailto:admissions@greenfieldacademy.edu" className="hover:text-primary">admissions@greenfieldacademy.edu</a></p>
+                    <p><a href="mailto:workwithpp46@gmail.com" className="hover:text-primary">workwithpp46@gmail.com</a></p>
                   </div>
                 </div>
               </div>

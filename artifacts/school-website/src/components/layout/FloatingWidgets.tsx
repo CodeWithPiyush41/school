@@ -31,7 +31,7 @@ export function FloatingWidgets() {
     <>
       {/* Phone Call Button - Bottom Right, top of stack */}
       <a
-        href="tel:+911112345678"
+        href="tel:+917742484927"
         className="fixed bottom-[148px] right-6 z-40 bg-primary hover:bg-primary/90 text-white rounded-full p-3 shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background group flex items-center justify-center"
         aria-label="Call us"
         data-testid="button-phone-float"
@@ -44,7 +44,7 @@ export function FloatingWidgets() {
 
       {/* WhatsApp Button - Bottom Right, middle of stack */}
       <a
-        href="https://wa.me/911112345678"
+        href="https://wa.me/917742484927"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-[84px] right-6 z-40 bg-green-500 hover:bg-green-600 text-white rounded-full p-3 shadow-lg transition-transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-background group flex items-center justify-center"

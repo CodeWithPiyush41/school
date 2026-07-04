@@ -100,13 +100,13 @@ export default function AdmissionPage() {
                   <span>Fee Enquiry</span>
                 </Button>
               </a>
-              <a href="tel:+911112345678" className="block">
+              <a href="tel:+917742484927" className="block">
                 <Button variant="outline" className="w-full h-auto py-4 flex flex-col gap-2">
                   <Phone className="h-5 w-5 text-primary" />
                   <span>Call Us</span>
                 </Button>
               </a>
-              <a href="https://wa.me/911112345678" target="_blank" rel="noreferrer" className="block">
+              <a href="https://wa.me/917742484927" target="_blank" rel="noreferrer" className="block">
                 <Button variant="outline" className="w-full h-auto py-4 flex flex-col gap-2 border-green-500 hover:bg-green-50 dark:hover:bg-green-950">
                   <MessageSquare className="h-5 w-5 text-green-500" />
                   <span className="text-green-600 dark:text-green-500">WhatsApp</span>
