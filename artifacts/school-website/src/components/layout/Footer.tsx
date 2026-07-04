@@ -36,7 +36,6 @@ export function Footer() {
               <li><Link href="/about" className="text-primary-foreground/80 hover:text-accent transition-colors">About Us</Link></li>
               <li><Link href="/academics" className="text-primary-foreground/80 hover:text-accent transition-colors">Academics & Curriculum</Link></li>
               <li><Link href="/admission" className="text-primary-foreground/80 hover:text-accent transition-colors">Admissions 2025-26</Link></li>
-              <li><Link href="/events" className="text-primary-foreground/80 hover:text-accent transition-colors">News & Events</Link></li>
               <li><Link href="/gallery" className="text-primary-foreground/80 hover:text-accent transition-colors">Photo Gallery</Link></li>
               <li><Link href="/contact" className="text-primary-foreground/80 hover:text-accent transition-colors">Contact Us</Link></li>
             </ul>

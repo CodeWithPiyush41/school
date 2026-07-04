@@ -12,7 +12,6 @@ const NAV_LINKS = [
   { href: "/academics", label: "Academics" },
   { href: "/admission", label: "Admission" },
   { href: "/gallery", label: "Gallery" },
-  { href: "/events", label: "Events" },
   { href: "/contact", label: "Contact" },
 ];
 

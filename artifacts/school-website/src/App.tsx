@@ -16,7 +16,6 @@ import AboutPage from '@/pages/AboutPage';
 import AcademicsPage from '@/pages/AcademicsPage';
 import AdmissionPage from '@/pages/AdmissionPage';
 import GalleryPage from '@/pages/GalleryPage';
-import EventsPage from '@/pages/EventsPage';
 import ContactPage from '@/pages/ContactPage';
 
 const queryClient = new QueryClient();
@@ -29,7 +28,6 @@ function Router() {
       <Route path="/academics" component={AcademicsPage} />
       <Route path="/admission" component={AdmissionPage} />
       <Route path="/gallery" component={GalleryPage} />
-      <Route path="/events" component={EventsPage} />
       <Route path="/contact" component={ContactPage} />
       <Route component={NotFound} />
     </Switch>
