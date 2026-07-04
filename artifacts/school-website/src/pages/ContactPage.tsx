@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -22,7 +23,8 @@ type FormValues = z.infer<typeof formSchema>;
 
 export default function ContactPage() {
   const { toast } = useToast();
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -34,15 +36,40 @@ export default function ContactPage() {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
-    // Simulated form submission
-    console.log("Form data:", data);
-    toast({
-      title: "Message Sent Successfully",
-      description: "We will get back to you within 24-48 working hours.",
-      variant: "default",
-    });
-    form.reset();
+  const onSubmit = async (data: FormValues) => {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "333bb23e-b580-4d00-821e-9f7974d0aa9c",
+          name: data.name,
+          email: data.email,
+          phone: data.phone,
+          subject: `[Greenfield Academy] ${data.subject} - ${data.name}`,
+          message: data.message,
+        }),
+      });
+      const result = await response.json();
+      if (result.success) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "We will get back to you within 24–48 working hours.",
+        });
+        form.reset();
+      } else {
+        throw new Error(result.message || "Submission failed");
+      }
+    } catch {
+      toast({
+        title: "Failed to send message",
+        description: "Please try again or contact us directly by phone.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -158,8 +185,9 @@ export default function ContactPage() {
                       )}
                     />
 
-                    <Button type="submit" size="lg" className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8">
-                      <Send className="mr-2 h-4 w-4" /> Send Message
+                    <Button type="submit" size="lg" disabled={isSubmitting} className="w-full sm:w-auto bg-accent hover:bg-accent/90 text-accent-foreground font-bold px-8">
+                      <Send className="mr-2 h-4 w-4" />
+                      {isSubmitting ? "Sending…" : "Send Message"}
                     </Button>
                   </form>
                 </Form>
